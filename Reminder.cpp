@@ -1,15 +1,5 @@
 #include "Reminder.hpp"
 
-Reminder::Reminder() {
-    day = 0;
-    minutes = 0;
-}
-
-Reminder::Reminder(int day, int minutes) {
-    this->day = day;
-    this->minutes = minutes;
-}
-
 Reminder::Reminder(int day, int hour, int minutes) {
     this->day = day;
     this->minutes = hour * 60 + minutes;
