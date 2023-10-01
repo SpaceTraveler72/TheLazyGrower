@@ -6,24 +6,34 @@
 #include "Reminder.cpp"
 
 class LinkedList {
-    struct node {
+    struct Node {
         Reminder data;
-        node* next;
+        Node* next;
     };
 
-    node* head;
-    node* tail;
+    Node* head;
+    Node* tail;
 
 public:
     LinkedList();
 
-    void add_node(Reminder data);
+    void addNode(Reminder data);
 
-    void remove_node(Reminder data);
+    void removeNode(Reminder data);
 
     void print();
 
-    void edit_node(Reminder oldData, Reminder newData);
+    void editNode(Reminder oldData, Reminder newData);
+
+    void addLinkedList(LinkedList other);
+    /*
+        Node* mergeSortedList(Node* list1, Node* list2);
+
+        void splitListIntoHalves(Node* source, Node** front, Node** back);
+
+        void mergeSort();
+
+        void mergeSort(Node** node);*/
 };
 
 #endif

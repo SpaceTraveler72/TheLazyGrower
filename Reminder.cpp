@@ -1,5 +1,4 @@
 #include "Reminder.hpp"
-#pragma once
 
 Reminder::Reminder() {
     day = 0;
@@ -52,9 +51,6 @@ std::string Reminder::getDayString() {
     }
 }
 
-int Reminder::getDay() {
-    return day;
-}
 
 int Reminder::getHour() {
     return (minutes - getReducedMinutes()) / 60;
@@ -64,10 +60,11 @@ int Reminder::getReducedMinutes() {
     return minutes % 60;
 }
 
-int Reminder::getMinutes() {
-    return minutes;
-}
-
 bool Reminder::isEqual(Reminder other) {
     return (getDay() == other.getDay() && other.getMinutes() == getMinutes());
 }
+
+int Reminder::getValue() {
+    return day * 24 * 60 + minutes;
+}
+

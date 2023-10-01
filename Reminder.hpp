@@ -9,22 +9,17 @@ class Reminder {
 
 public:
     Reminder();
-
     Reminder(int day, int minutes);
-
     Reminder(int day, int hour, int minutes);
 
+    int getDay() { return day; }
+    int getMinutes() { return minutes; }
+
     std::string getDayString();
-
-    int getDay();
-
     int getHour();
-
     int getReducedMinutes();
-
-    int getMinutes();
-
     bool isEqual(Reminder other);
+    int getValue();
 };
 
 #endif
