@@ -2,12 +2,12 @@
 #define SCHEDULE_HPP
 
 #include <iostream>
-#include "LinkedList.hpp"
+#include "ArrayList.hpp"
 
 class Schedule {
 
 private:
-    LinkedList m_reminderArray;
+    ArrayList m_reminderArray;
 
 public:
 
@@ -19,7 +19,7 @@ public:
 
     void setupSchedule(Reminder reminders[], int length);
 
-    void copySchedule(LinkedList other);
+    void copySchedule(ArrayList other);
 
     void printSchedule() { m_reminderArray.print(); }
 };

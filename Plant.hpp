@@ -19,12 +19,8 @@ public:
     void setType(string t) { type = t; }
     string getName() { return name; }
     string getType() { return type; }
-    void setupDailyWaterSchedule(int hours, int minutes) {
-        waterSchedule.setupDailySchedule(hours, minutes);
-    }
-    void setupDailySunlightSchedule(int hours, int minutes) {
-        sunlightSchedule.setupDailySchedule(hours, minutes);
-    }
+    void setupDailyWaterSchedule(int hours, int minutes);
+    void setupDailySunlightSchedule(int hours, int minutes);
     //void sortSchedules();
     void printSchedules();
 

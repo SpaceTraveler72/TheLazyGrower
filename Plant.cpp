@@ -1,6 +1,4 @@
 #include "Plant.hpp"   //header file
-#include "Reminder.hpp"
-#include "Schedule.hpp"
 #include <iostream>
 
 using namespace std;
@@ -22,4 +20,12 @@ void Plant::printSchedules() {
     sunlightSchedule.printSchedule();
     cout << "Water Schedule: ";
     waterSchedule.printSchedule();
+}
+
+void Plant::setupDailyWaterSchedule(int hours, int minutes) {
+    waterSchedule.setupDailySchedule(hours, minutes);
+}
+
+void Plant::setupDailySunlightSchedule(int hours, int minutes) {
+    sunlightSchedule.setupDailySchedule(hours, minutes);
 }
