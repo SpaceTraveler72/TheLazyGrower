@@ -16,6 +16,10 @@ void LinkedList::addNode(Reminder data) {
         head->next = tail;
         return;
     }
+    else if (tail == nullptr) {
+        tail = new_node;
+        return;
+    }
 
     tail->next = new_node;
     tail = new_node;
