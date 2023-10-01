@@ -8,7 +8,9 @@ class Reminder {
     int minutes;
 
 public:
-    Reminder(int day = 0, int hour = 0, int minutes = 0);
+    Reminder();
+    Reminder(int day, int minute);
+    Reminder(int days, int hours, int minutes);
 
     int getDay() { return day; }
     int getMinutes() { return minutes; }

@@ -1,4 +1,6 @@
 #include "Plant.hpp"   //header file
+#include "Reminder.hpp"
+#include "Schedule.hpp"
 #include <iostream>
 
 using namespace std;

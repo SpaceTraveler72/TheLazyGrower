@@ -1,8 +1,18 @@
 #include "Reminder.hpp"
 
-Reminder::Reminder(int day, int hour, int minutes) {
+Reminder::Reminder() {
+    day = 0;
+    minutes = 0;
+}
+
+Reminder::Reminder(int day, int minute) {
     this->day = day;
-    this->minutes = hour * 60 + minutes;
+    this->minutes = minutes;
+}
+
+Reminder::Reminder(int days = 0, int hours = 0, int minutes = 0) {
+    this->day = day;
+    this->minutes = hours * 60 + minutes;
 }
 
 std::string Reminder::getDayString() {

@@ -1,4 +1,5 @@
 #include "LinkedList.hpp"
+#include "Reminder.hpp"
 
 LinkedList::LinkedList() {
     head = nullptr;

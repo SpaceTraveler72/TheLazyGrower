@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include "Reminder.cpp"
+#include "Reminder.hpp"
 
 class LinkedList {
     struct Node {

@@ -2,7 +2,6 @@
 #define SCHEDULE_HPP
 
 #include <iostream>
-#include "Reminder.hpp"
 #include "LinkedList.hpp"
 
 class Schedule {
