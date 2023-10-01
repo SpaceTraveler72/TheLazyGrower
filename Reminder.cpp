@@ -1,71 +1,73 @@
-#include <string>
+#include "Reminder.hpp"
+#pragma once
 
-class Reminder {
-    int day;
-    int minutes;
+Reminder::Reminder() {
+    day = 0;
+    minutes = 0;
+}
 
-public:
-    Reminder(int day, int minutes) {
-        this->day = day;
-        this->minutes = minutes;
+Reminder::Reminder(int day, int minutes) {
+    this->day = day;
+    this->minutes = minutes;
+}
+
+Reminder::Reminder(int day, int hour, int minutes) {
+    this->day = day;
+    this->minutes = hour * 60 + minutes;
+}
+
+std::string Reminder::getDayString() {
+    switch (day) {
+    case 1:
+        return "Sunday";
+        break;
+
+    case 2:
+        return "Monday";
+        break;
+
+    case 3:
+        return "Tuesday";
+        break;
+
+    case 4:
+        return "Wednesday";
+        break;
+
+    case 5:
+        return "Thursday";
+        break;
+
+    case 6:
+        return "Friday";
+        break;
+
+    case 7:
+        return "Saturday";
+        break;
+
+    default:
+        return"";
+        break;
     }
+}
 
-    Reminder(int day, int hour, int minutes) {
-        this->day = day;
-        this->minutes = hour * 60 + minutes;
-    }
+int Reminder::getDay() {
+    return day;
+}
 
+int Reminder::getHour() {
+    return (minutes - getReducedMinutes()) / 60;
+}
 
-    std::string getDayString() {
-        switch (day) {
-        case 1:
-            return "Sunday";
-            break;
+int Reminder::getReducedMinutes() {
+    return minutes % 60;
+}
 
-        case 2:
-            return "Monday";
-            break;
+int Reminder::getMinutes() {
+    return minutes;
+}
 
-        case 3:
-            return "Tuesday";
-            break;
-
-        case 4:
-            return "Wednesday";
-            break;
-
-        case 5:
-            return "Thursday";
-            break;
-
-        case 6:
-            return "Friday";
-            break;
-
-        case 7:
-            return "Saturday";
-            break;
-
-        default:
-            return"";
-            break;
-        }
-    }
-
-    int getDay() {
-        return day;
-    }
-
-    int getHour() {
-        return (minutes - getReducedMinutes()) / 60;
-    }
-
-    int getReducedMinutes() {
-        return minutes % 60;
-    }
-};
-
-struct dayTime {
-    int day;
-    int minutes;
+bool Reminder::isEqual(Reminder other) {
+    return (getDay() == other.getDay() && other.getMinutes() == getMinutes());
 }
