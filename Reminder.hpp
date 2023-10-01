@@ -12,6 +12,7 @@ public:
     Reminder(int day, int minute);
     Reminder(int days, int hours, int minutes);
 
+
     int getDay() { return day; }
     int getMinutes() { return minutes; }
 

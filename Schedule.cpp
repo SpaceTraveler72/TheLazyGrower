@@ -3,9 +3,9 @@
 Schedule::Schedule() {}
 
 void Schedule::setupDailySchedule(int hours, int minutes) {
-    for (int i = 0; i < 7; i++) {
-        Reminder temp(i, hours, minutes);
-        m_reminderArray.addNode(temp);
+    for (int i = 1; i <= 7; i++) {
+        Reminder* temp = new Reminder(i, hours, minutes);
+        m_reminderArray.addNode(*temp);
     }
 }
 

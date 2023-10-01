@@ -2,27 +2,46 @@
 #include "Reminder.hpp"
 
 LinkedList::LinkedList() {
-    head = nullptr;
-    tail = nullptr;
+    head = new Node;
+    tail = new Node;
 }
 
-void LinkedList::addNode(Reminder data) {
-    Node* new_node = new Node();
-    new_node->data = data;
-    new_node->next = nullptr;
+void LinkedList::addNode(Reminder num) 
+    {
+      Node* newNode;                
+      Node* nodePtr;                
+      Node* previousNode = nullptr; 
 
-    if (head == nullptr) {
-        head = new_node;
-        head->next = tail;
-        return;
-    }
-    else if (tail == nullptr) {
-        tail = new_node;
-        return;
-    }
+      newNode = new Node;
 
-    tail->next = new_node;
-    tail = new_node;
+      if (!head)
+      {
+          head = newNode;
+          newNode->next = nullptr;
+      }
+      else
+      {
+          nodePtr = head;
+
+          previousNode = nullptr;
+
+          while (nodePtr != nullptr && nodePtr->data.getValue() < num.getValue())
+          {
+              previousNode = nodePtr;
+              nodePtr = nodePtr->next;
+          }
+
+          if (previousNode == nullptr)
+          {
+              head = newNode;
+              newNode->next = nodePtr;
+          }
+          else
+          {
+              previousNode->next = newNode;
+              newNode->next = nodePtr;
+          }
+      }
 }
 
 void LinkedList::removeNode(Reminder data) {
@@ -53,9 +72,10 @@ void LinkedList::removeNode(Reminder data) {
 void LinkedList::print() {
     Node* current = head;
     while (current != nullptr) {
-        std::cout << current->data.getDayString() << " " << current->data.getHour() << ":" << current->data.getReducedMinutes() << std::endl;
+        std::cout << current->data.getDay() << " -> ";
         current = current->next;
     }
+    //std::cout << "Hello" << std::endl;
     std::cout << std::endl;
 }
 

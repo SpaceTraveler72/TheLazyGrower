@@ -11,9 +11,10 @@ Reminder::Reminder(int day, int minute) {
 }
 
 Reminder::Reminder(int days = 0, int hours = 0, int minutes = 0) {
-    this->day = day;
+    this->day = days;
     this->minutes = hours * 60 + minutes;
 }
+
 
 std::string Reminder::getDayString() {
     switch (day) {
